@@ -26,11 +26,13 @@ The launchers use `gt.stl` as the ground truth and `mod.stl` as the reconstructe
 
 ## Requirements
 
-Use Python in a Conda environment named `esim` to run the supplied `.bat` files. The scripts import NumPy, pandas, trimesh, pyrender, Open3D, Matplotlib, imageio, and SciPy. The perceptual pipeline additionally imports scikit-image, PyTorch, and LPIPS. A working offscreen-rendering setup is needed for `pyrender`; the perceptual pipeline uses CUDA when available and otherwise runs LPIPS on CPU.
+Use Python in a Conda environment named `meshEval` to run the supplied `.bat` files. The scripts import NumPy, pandas, trimesh, pyrender, Open3D, Matplotlib, imageio, and SciPy. The perceptual pipeline additionally imports scikit-image, PyTorch, and LPIPS. A working offscreen-rendering setup is needed for `pyrender`; the perceptual pipeline uses CUDA when available and otherwise runs LPIPS on CPU.
 
-Install the required Python packages with pip:
+## Installation
 
 ```bash
+conda create -n meshEval python=3.12
+conda activate meshEval
 pip install numpy pandas trimesh pyrender open3d matplotlib imageio scipy scikit-image torch lpips
 ```
 
