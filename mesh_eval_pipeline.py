@@ -500,7 +500,7 @@ def run_pipeline(gt_path, rm_path, out_dir,
         "final_transform_23": final_transform[2, 3],
     }])
 
-    csv_path = os.path.join(paths["metrics"], "mesh_metrics.csv")
+    csv_path = os.path.join(paths["metrics"], "metrics_geometry.csv")
     df.to_csv(csv_path, index=False)
 
     print("\nDone.")

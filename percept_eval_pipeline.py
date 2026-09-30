@@ -603,7 +603,7 @@ def run_pipeline(gt_path, rm_path, out_dir,
     summary_df = pd.DataFrame(summary_rows)
 
     per_view_csv = os.path.join(paths["metrics"], "per_view_metrics.csv")
-    summary_csv = os.path.join(paths["metrics"], "metric_summary.csv")
+    summary_csv = os.path.join(paths["metrics"], "metrics_perceptual.csv")
     per_view_df.to_csv(per_view_csv, index=False)
     summary_df.to_csv(summary_csv, index=False)
 
