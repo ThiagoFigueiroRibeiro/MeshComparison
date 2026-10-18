@@ -6,7 +6,7 @@
 
 ## Passo 1 — Conferir o fluxo multivista existente
 
-O pipeline perceptual (`src/meshcomparison/perceptual/`) já reutiliza o carregamento, a normalização e o alinhamento das etapas 03 e 04. Para cada azimute, crie uma câmera ortográfica comum, renderize GT e RM em RGBA, forme máscaras pelo canal alfa e recorte a união das silhuetas. Por padrão, percorra 100 vistas.
+O pipeline perceptual (`src/meshcomparison/perceptual/`) já reutiliza o carregamento, a normalização e o alinhamento compartilhado das etapas 03 e 04. O módulo `cameras.py` define vistas e renderização; `image_metrics.py` converte RGBA, aplica as máscaras e calcula LPIPS, PSNR e SSIM. Por padrão, o pipeline percorre 100 vistas.
 
 ## Passo 2 — Trecho da implementação atual
 
@@ -27,10 +27,10 @@ with torch.no_grad():
 
 ## Passo 3 — Entender as métricas e validar
 
-O script já implementa PSNR como `10 log10(1/MSE_imagem)` para pixels em `[0,1]`, com tratamento de erro zero. Para reproduzir **exatamente** os resultados atuais, consulte `masked_psnr` do script: o denominador conta pixels mascarados, enquanto o numerador soma os três canais, diferente da média RGB convencional. SSIM e LPIPS atuais recebem o fundo zerado, não uma máscara ponderada. Por padrão, o script salva exemplos das vistas 1, 33 e 66.
+O módulo `image_metrics.py` implementa PSNR como `10 log10(1/MSE_imagem)` para pixels em `[0,1]`, com tratamento de erro zero. Para reproduzir **exatamente** os resultados atuais, consulte `masked_psnr`: o denominador conta pixels mascarados, enquanto o numerador soma os três canais, diferente da média RGB convencional. SSIM e LPIPS recebem o fundo zerado, não uma máscara ponderada. Por padrão, o pipeline salva exemplos das vistas 1, 33 e 66.
 
 ## Passo 4 — Próxima etapa
 
 Continue para [09 — Conferir os resultados exportados](09-relatorios-validacao.md).
 
-**Código de referência:** [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py). As amostras acima mostram etapas de construção; consulte as funções completas nos scripts quando houver utilitários auxiliares.
+**Código de referência:** [câmeras e renderização multivista](../../../src/meshcomparison/perceptual/cameras.py), [métricas de imagem](../../../src/meshcomparison/perceptual/image_metrics.py), [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py) e [alinhamento compartilhado](../../../src/meshcomparison/common/alignment.py).

@@ -33,4 +33,4 @@ O pipeline já gera `gt_ortho.png`, `rm_aligned_ortho.png`, `gt_heatmap_ortho.pn
 
 Continue para [08 — Conferir as vistas e métricas perceptuais](08-metricas-perceptuais.md).
 
-**Código de referência:** [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py). As amostras acima mostram etapas de construção; consulte as funções completas nos scripts quando houver utilitários auxiliares.
+**Código de referência:** [render compartilhado](../../../src/meshcomparison/common/rendering.py), [render geométrico](../../../src/meshcomparison/geometry/rendering.py), [heatmap](../../../src/meshcomparison/geometry/heatmap.py) e [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py).

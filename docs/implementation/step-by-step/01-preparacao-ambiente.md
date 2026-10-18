@@ -1,6 +1,6 @@
 # 01 — Preparar o projeto e instalar as dependências
 
-> **Status: concluída para execução em CPU.** Ambiente local criado, dependências importadas sem erro e os pipelines geométrico e perceptual executados com os arquivos de exemplo. O snapshot `environment-lock.yml` registra as versões instaladas. O PyTorch deste ambiente é CPU-only; CUDA não está disponível.
+> **Status: concluída para execução em CPU.** Ambiente local criado, dependências importadas sem erro e os pipelines geométrico e perceptual executados com os arquivos de exemplo. O snapshot `environments/environment-lock.yml` registra as versões instaladas. O PyTorch deste ambiente é CPU-only; CUDA não está disponível.
 
 Este passo prepara o ambiente para executar e validar os pipelines que já existem no repositório.
 
@@ -67,7 +67,15 @@ conda env create -f environments/environment-lock.yml
 
 `environments/environment.yml` continua como uma lista geral de dependências; `environments/environment-lock.yml` fixa as versões Conda e pip observadas neste ambiente Windows em 17/10/2026. O snapshot não inclui o caminho local do ambiente.
 
-## Passo 3 — Conferir o ambiente e executar os scripts
+## Passo 3 — Instalar o pacote e executar os pipelines
+
+Na raiz do repositório, registre o pacote no ambiente ativo. A instalação editável permite importar `meshcomparison` diretamente do diretório `src/` e disponibiliza os comandos `mesh-eval` e `percept-eval` definidos no `pyproject.toml`:
+
+```bat
+python -m pip install -e . --no-deps
+```
+
+O arquivo Conda instala as dependências; `--no-deps` evita que o pip tente substituí-las.
 
 Primeiro, confira as importações:
 
@@ -104,4 +112,4 @@ O repositório já contém `data/samples/gt.stl` e `data/samples/mod.stl` para e
 
 Continue para [02 — Conferir os programas e a interface de linha de comando](02-arquitetura-implementacao.md).
 
-**Código de referência:** [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py). Os scripts já existem; esta etapa registra a preparação e a validação do ambiente local.
+**Código de referência:** [configuração do pacote e comandos](../../../pyproject.toml), [CLI geométrica](../../../src/meshcomparison/geometry/cli.py) e [CLI perceptual](../../../src/meshcomparison/perceptual/cli.py). Esta etapa registra a preparação e a validação do ambiente local.

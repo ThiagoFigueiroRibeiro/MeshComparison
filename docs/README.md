@@ -3,7 +3,7 @@
 Esta documentação possui dois caminhos complementares:
 
 - **[Entender a avaliação de malhas 3D](avaliacao-geometrica/):** explicação simplificada dos critérios de comparação, métricas geométricas e perceptuais, relevância e limitações.
-- **[Tutorial de implementação](implementation/):** passo a passo técnico para construir os pipelines do projeto, com código e diagramas.
+- **[Guia de implementação](implementation/):** arquitetura atual do pacote Python, execução dos pipelines, leitura do código e validação.
 - **[Resultados atuais](results/):** resumo das métricas e visualizações produzidas nas execuções de exemplo.
 
-A leitura conceitual é recomendada antes do tutorial de implementação.
+A leitura conceitual é recomendada antes do guia de implementação. Os documentos em `archived/` preservam versões anteriores e podem descrever uma estrutura de código já substituída.

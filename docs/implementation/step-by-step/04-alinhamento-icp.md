@@ -6,7 +6,7 @@
 
 ## Passo 1 — Conferir correspondência e alinhamento
 
-A função `nn_distances` já usa `scipy.spatial.cKDTree` para localizar o vértice de destino mais próximo de cada vértice de origem. O pipeline calcula o MSE simétrico pré-alinhamento e aplica ICP à RM quando o valor supera `1e-4`, mantendo GT fixa.
+A função `nn_distances` em `common/distances.py` usa `scipy.spatial.cKDTree` para localizar o vértice de destino mais próximo de cada vértice de origem. O pipeline calcula o MSE simétrico pré-alinhamento e aplica ICP à RM quando o valor supera `1e-4`, mantendo GT fixa.
 
 ## Passo 2 — Trecho da implementação atual
 
@@ -29,4 +29,4 @@ A implementação existente de `similarity_icp_align` converte os vértices em `
 
 Continue para [05 — Conferir MSE e RMSE simétricos](05-mse-rmse.md).
 
-**Código de referência:** [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py). As amostras acima mostram etapas de construção; consulte as funções completas nos scripts quando houver utilitários auxiliares.
+**Código de referência:** [distâncias e vizinhos](../../../src/meshcomparison/common/distances.py), [alinhamento compartilhado](../../../src/meshcomparison/common/alignment.py), [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py).

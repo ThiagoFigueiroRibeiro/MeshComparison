@@ -32,4 +32,4 @@ Valide com duas cópias idênticas de um STL: após normalizar, as coordenadas d
 
 Continue para [04 — Conferir a correspondência e o ICP](04-alinhamento-icp.md).
 
-**Código de referência:** [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py). As amostras acima mostram etapas de construção; consulte as funções completas nos scripts quando houver utilitários auxiliares.
+**Código de referência:** carregamento em [`common/io.py`](../../../src/meshcomparison/common/io.py), transformação em [`common/transforms.py`](../../../src/meshcomparison/common/transforms.py), normalização no [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e no [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py).

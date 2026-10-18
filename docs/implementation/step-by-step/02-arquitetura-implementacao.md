@@ -1,4 +1,4 @@
-# 02 — Conferir os programas e a interface de linha de comando
+# 02 — Entender a arquitetura do pacote e as interfaces de linha de comando
 
 > **Status: concluída.** Os dois pipelines, suas interfaces de linha de comando e a criação das pastas de saída já estão implementados.
 
@@ -6,35 +6,34 @@
 
 ## Passo 1 — Conferir a arquitetura existente
 
-Os pacotes `src/meshcomparison/geometry/` e `src/meshcomparison/perceptual/` já existem (módulos `cli.py` e `pipeline.py`, com utilitários compartilhados em `src/meshcomparison/common/`). Confira neles a leitura de argumentos, a criação das pastas e a função `run_pipeline`.
+O projeto usa a estrutura `src/` e é configurado em `pyproject.toml`. A lógica está dividida por responsabilidade:
 
-## Passo 2 — Trecho da implementação atual
+```text
+src/meshcomparison/
+├── common/       # I/O de malhas, transformações, distâncias, alinhamento e renderização
+├── geometry/     # CLI, pipeline, métricas geométricas, renders e heatmap
+└── perceptual/   # CLI, pipeline, câmeras, figuras e métricas de imagem
+```
+
+Cada fluxo tem um `cli.py` para argumentos e um `pipeline.py` para orquestração. `common/` concentra operações compartilhadas. `geometry/__main__.py` e `perceptual/__main__.py` permitem executar com `python -m`; os comandos `mesh-eval` e `percept-eval` são registrados como entry points no `pyproject.toml`. Os lançadores de `scripts/` apenas encaminham os argumentos para os módulos do pacote.
+
+## Passo 2 — Como o fluxo é conectado
 
 ```python
-# Lê os caminhos de entrada e prepara as pastas do experimento
-import argparse
-from pathlib import Path
+# A CLI interpreta argumentos e delega a execução ao pipeline do pacote.
+from .cli import main
 
-def ensure_dirs(base_out):
-    paths = {name: Path(base_out) / name for name in ('renders', 'heatmaps', 'metrics', 'aligned')}
-    for path in paths.values():
-        path.mkdir(parents=True, exist_ok=True)
-    return paths
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--gt', required=True)
-parser.add_argument('--rm', required=True)
-parser.add_argument('--out', default='output')
-args = parser.parse_args()
-paths = ensure_dirs(args.out)
+main()
 ```
+
+O código executável correspondente está em [`geometry/__main__.py`](../../../src/meshcomparison/geometry/__main__.py) e [`geometry/cli.py`](../../../src/meshcomparison/geometry/cli.py). A preparação das pastas compartilhada está em [`common/io.py`](../../../src/meshcomparison/common/io.py); o pipeline define quais subpastas cada fluxo usa.
 
 ## Passo 3 — Executar e conferir
 
-Execute `python -m meshcomparison.geometry --gt data/samples/gt.stl --rm data/samples/mod.stl --out output` e confira os arquivos gerados. A função `run_pipeline(...)`, as opções de alinhamento e câmera e as pastas específicas do fluxo perceptual já estão implementadas; não é necessário adicioná-las novamente.
+Instale o pacote conforme a [etapa 01](01-preparacao-ambiente.md) e execute `python -m meshcomparison.geometry --gt data/samples/gt.stl --rm data/samples/mod.stl --out output`. Para a interface de console, use `mesh-eval --gt ... --rm ... --out ...`; o perceptual disponibiliza `python -m meshcomparison.perceptual` ou `percept-eval`. Confira os argumentos com `--help`.
 
 ## Passo 4 — Próxima etapa
 
 Continue para [03 — Conferir o carregamento e a normalização das malhas](03-malhas-normalizacao.md).
 
-**Código de referência:** [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py) e [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py). As amostras acima mostram etapas de construção; consulte as funções completas nos scripts quando houver utilitários auxiliares.
+**Código de referência:** [configuração e entry points](../../../pyproject.toml), [CLI geométrica](../../../src/meshcomparison/geometry/cli.py), [pipeline geométrico](../../../src/meshcomparison/geometry/pipeline.py), [CLI perceptual](../../../src/meshcomparison/perceptual/cli.py), [pipeline perceptual](../../../src/meshcomparison/perceptual/pipeline.py) e [utilitários compartilhados](../../../src/meshcomparison/common/).

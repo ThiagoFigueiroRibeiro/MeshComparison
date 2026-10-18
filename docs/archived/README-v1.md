@@ -1,3 +1,5 @@
+> **Documento arquivado:** esta versão descreve a estrutura anterior à modularização do pacote `meshcomparison`. Para a arquitetura e os comandos atuais, consulte o [README principal](../../README.md) e o [guia de implementação](../implementation/README.md).
+
 <p align="center">
   <img src="../assets/mesh-comparison-logo.svg" width="180" alt="Mesh Comparison logo">
 </p>
