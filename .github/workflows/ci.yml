@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    env:
+      PYOPENGL_PLATFORM: egl
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+      - name: System libraries for Open3D / pyrender
+        shell: bash
+        run: sudo apt-get update && sudo apt-get install -y libegl1 libgl1 libglu1-mesa libosmesa6
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: environments/environment.yml
+          activate-environment: meshEval
+      - name: Install package
+        run: pip install -e . --no-deps
+      - name: Lint
+        run: ruff check .
+      - name: Tests
+        run: pytest -q
+      - name: Import smoke test
+        run: |
+          python -c "import meshcomparison.geometry.pipeline, meshcomparison.perceptual.pipeline, meshcomparison.gui.worker"

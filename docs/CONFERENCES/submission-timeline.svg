@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1323.92" height="1312.588" viewBox="38.54 14.894 1323.92 1312.588" role="img" aria-labelledby="title desc">
+  <title id="title">Calendário de submissões e conferências, 2026–2027</title>
+  <desc id="desc">Prazos de submissão da IJCNN 2027, datas das conferências IJCNN e IV 2027 e lembrete provisório para acompanhamento em fevereiro de 2027 sobre a submissão da IV, sem data oficial anunciada.</desc>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      text[fill="#13233b"], text[fill="#20324b"] { fill: #edf2fa !important; }
+      text[fill="#52627a"], text[fill="#6a778a"], text[fill="#34445c"] { fill: #afbdd0 !important; }
+      text[fill="#155b91"] { fill: #9bd2ff !important; }
+      text[fill="#654294"] { fill: #dbc2ff !important; }
+      rect[fill="#ffffff"] { fill: #192332 !important; stroke: #394a60 !important; }
+      rect[fill="#e4f1fb"] { fill: #1d3b56 !important; }
+      rect[fill="#f0eafb"] { fill: #392c4d !important; }
+      line[stroke="#c4cfdd"] { stroke: #516077 !important; }
+      circle[fill="#1769aa"] { fill: #62baff !important; }
+      circle[fill="#7651a8"] { fill: #c49aff !important; }
+    }
+  </style>
+  <text x="64" y="74" fill="#13233b" font-size="36" font-weight="700">Calendário 2026–2027</text>
+  <text x="64" y="116" fill="#52627a" font-size="21">Datas conferidas em 19 out. 2026</text>
+  <rect x="1010" y="46" width="26" height="26" rx="7" fill="#1769aa"/>
+  <text x="1048" y="66" fill="#34445c" font-size="18">IJCNN 2027</text>
+  <rect x="1170" y="46" width="26" height="26" rx="7" fill="#7651a8"/>
+  <text x="1208" y="66" fill="#34445c" font-size="18">IV 2027</text>
+  <g data-sm-edit="element" transform="translate(0 -83) rotate(0) scale(1 0.88)" style="transform-box:fill-box;transform-origin:center">
+    <line x1="124" y1="175" x2="124" y2="1396" stroke="#c4cfdd" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g>
+    <!-- 15 de novembro de 2026 -->
+    <g>
+      <circle cx="124" cy="218" r="13" fill="#1769aa" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="174" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="191" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="226" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">15 nov. 2026</text>
+      <text x="430" y="225" fill="#20324b" font-size="23" font-weight="600">Prazo: propostas para sessões especiais e workshops</text>
+    </g>
+    <!-- 30 de novembro de 2026 -->
+    <g>
+      <circle cx="124" cy="333" r="13" fill="#1769aa" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="289" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="306" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="341" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">30 nov. 2026</text>
+      <text x="430" y="340" fill="#20324b" font-size="23" font-weight="600">Prazo: propostas para competições e tutoriais</text>
+    </g>
+    <!-- 1 de dezembro de 2026 -->
+    <g>
+      <circle cx="124" cy="448" r="13" fill="#1769aa" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="404" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="421" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="456" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">1 dez. 2026</text>
+      <text x="430" y="455" fill="#20324b" font-size="23" font-weight="600">Abertura das submissões de artigos</text>
+    </g>
+    <!-- 15 de dezembro de 2026 -->
+    <g>
+      <circle cx="124" cy="563" r="13" fill="#1769aa" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="519" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="536" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="571" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">15 dez. 2026</text>
+      <text x="430" y="554" fill="#20324b" font-size="21" font-weight="600">Notificação: sessões especiais, competições, tutoriais</text>
+      <text x="430" y="581" fill="#20324b" font-size="21" font-weight="600">e propostas de workshops</text>
+    </g>
+    <!-- 31 de janeiro de 2027 -->
+    <g>
+      <circle cx="124" cy="678" r="13" fill="#1769aa" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="634" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="651" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="686" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">31 jan. 2027</text>
+      <text x="430" y="685" fill="#20324b" font-size="23" font-weight="600">Prazo final: artigos regulares</text>
+    </g>
+    <!-- Fevereiro de 2027: acompanhamento provisório da IV -->
+    <g>
+      <circle cx="124" cy="793" r="13" fill="#7651a8" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="749" width="1162" height="88" rx="17" fill="#ffffff" stroke="#7651a8" stroke-width="2" stroke-dasharray="8 6"/>
+      <rect x="198" y="766" width="202" height="54" rx="12" fill="#f0eafb"/>
+      <text x="299" y="801" fill="#654294" font-size="20" font-weight="700" text-anchor="middle">fev. 2027 (?)</text>
+      <text x="430" y="790" fill="#20324b" font-size="22" font-weight="600">IV 2027: prazo de submissão a confirmar</text>
+      <text x="430" y="817" fill="#52627a" font-size="18">Mês provisório para acompanhamento; sem data oficial anunciada</text>
+    </g>
+    <!-- 15 de março de 2027 -->
+    <g>
+      <circle cx="124" cy="908" r="13" fill="#1769aa" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="864" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="881" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="916" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">15 mar. 2027</text>
+      <text x="430" y="915" fill="#20324b" font-size="23" font-weight="600">Notificação de aceitação: artigos regulares</text>
+    </g>
+    <!-- 12 de abril de 2027 -->
+    <g>
+      <circle cx="124" cy="1023" r="13" fill="#1769aa" stroke="#f7f9fc" stroke-width="5"/>
+      <rect x="174" y="979" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="996" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="1031" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">12 abr. 2027</text>
+      <text x="430" y="1030" fill="#20324b" font-size="23" font-weight="600">Prazo final: versão para publicação (camera-ready)</text>
+    </g>
+    <!-- IJCNN 2027: destaque verde -->
+    <g>
+      <g data-sm-edit="element" transform="translate(0 0) rotate(0) scale(1.17)" style="transform-box:fill-box;transform-origin:center">
+        <circle cx="124" cy="1138" r="24" fill="#22c55e" opacity="0.18"/>
+      </g>
+      <g data-sm-edit="element" transform="translate(0 0) rotate(0) scale(1.17)" style="transform-box:fill-box;transform-origin:center">
+        <circle cx="124" cy="1138" r="17" fill="#16a34a" stroke="#ffffff" stroke-width="6"/>
+      </g>
+      <g data-sm-edit="element" transform="translate(0 0) rotate(0) scale(1.17)" style="transform-box:fill-box;transform-origin:center">
+        <circle cx="124" cy="1138" r="8" fill="#bbf7d0"/>
+      </g>
+      <rect x="174" y="1094" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="1111" width="202" height="54" rx="12" fill="#e4f1fb"/>
+      <text x="299" y="1146" fill="#155b91" font-size="20" font-weight="700" text-anchor="middle">14–18 jun. 2027</text>
+      <text x="430" y="1135" fill="#20324b" font-size="21" font-weight="600">Dias da conferência</text>
+      <text x="430" y="1162" fill="#52627a" font-size="18">Cidade do Cabo, África do Sul</text>
+    </g>
+    <!-- IV 2027: destaque verde -->
+    <g>
+      <g data-sm-edit="element" transform="translate(0 0) rotate(0) scale(1.17)" style="transform-box:fill-box;transform-origin:center">
+        <circle cx="124" cy="1253" r="24" fill="#22c55e" opacity="0.18"/>
+      </g>
+      <g data-sm-edit="element" transform="translate(0 0) rotate(0) scale(1.17)" style="transform-box:fill-box;transform-origin:center">
+        <circle cx="124" cy="1253" r="17" fill="#16a34a" stroke="#ffffff" stroke-width="6"/>
+      </g>
+      <g data-sm-edit="element" transform="translate(0 0) rotate(0) scale(1.17)" style="transform-box:fill-box;transform-origin:center">
+        <circle cx="124" cy="1253" r="8" fill="#bbf7d0"/>
+      </g>
+      <rect x="174" y="1209" width="1162" height="88" rx="17" fill="#ffffff" stroke="#d9e2ed"/>
+      <rect x="198" y="1226" width="202" height="54" rx="12" fill="#f0eafb"/>
+      <text x="299" y="1261" fill="#654294" font-size="20" font-weight="700" text-anchor="middle">28–30 jul. 2027</text>
+      <text x="430" y="1250" fill="#20324b" font-size="21" font-weight="600">Dias da conferência</text>
+      <text x="430" y="1277" fill="#52627a" font-size="18">Roma, Itália</text>
+    </g>
+  </g>
+</svg>

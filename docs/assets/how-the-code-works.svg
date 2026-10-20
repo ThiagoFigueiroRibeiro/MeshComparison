@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 390" role="img" aria-labelledby="title desc">
+  <title id="title">How the Mesh Comparison code works</title>
+  <desc id="desc">Ground-truth and reconstructed meshes share loading, normalization and conditional ICP preparation, then branch into geometric and perceptual evaluations that write results to the selected folder.</desc>
+  <style>
+    :root { color-scheme: light dark; --text:#27384c; --muted:#536a82; --card:#ffffff; --accent:#dfe9f4; --line:#7089a5; --arrow:#56708c; --blue:#356487; --orange:#c87856; }
+    @media (prefers-color-scheme: dark) { :root { --text:#e6edf3; --muted:#9fb1c3; --card:#161b22; --accent:#1f3550; --line:#5f7f9f; --arrow:#8aa4bd; --blue:#6fb0dc; --orange:#e59a78; } }
+    text { font-family:Arial,sans-serif; fill:var(--text); }
+    .muted { fill:var(--muted); }
+    .card { fill:var(--card); stroke:var(--line); stroke-width:2; }
+    .accent { fill:var(--accent); stroke:var(--line); stroke-width:2; }
+    .arrow { fill:none; stroke:var(--arrow); stroke-width:2.5; marker-end:url(#arrow); }
+    .gt { fill:var(--blue); }
+    .rm { fill:var(--orange); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="var(--arrow)"/></marker>
+  </defs>
+  <text x="560" y="36" text-anchor="middle" font-size="24" font-weight="bold">How the Code Works</text>
+  <text x="560" y="62" text-anchor="middle" class="muted" font-size="14">The desktop app or Python API starts one or both evaluation pipelines</text>
+
+  <rect class="card" x="24" y="120" width="160" height="96" rx="12"/>
+  <text x="104" y="153" text-anchor="middle" font-size="17" font-weight="bold">Input meshes</text>
+  <text x="104" y="181" text-anchor="middle" class="muted" font-size="14"><tspan class="gt">GT</tspan><tspan> + </tspan><tspan class="rm">RM</tspan></text>
+
+  <path class="arrow" d="M185 168H225"/>
+  <rect class="accent" x="230" y="105" width="270" height="126" rx="12"/>
+  <text x="365" y="137" text-anchor="middle" font-size="17" font-weight="bold">Shared mesh preparation</text>
+  <text x="365" y="166" text-anchor="middle" class="muted" font-size="14">Load · normalize using GT scale</text>
+  <text x="365" y="190" text-anchor="middle" class="muted" font-size="14">Check normalized MSE · conditional ICP</text>
+  <text x="365" y="213" text-anchor="middle" class="muted" font-size="12">Align only when MSE exceeds the threshold</text>
+
+  <path class="arrow" d="M501 168H534V119H566"/>
+  <path class="arrow" d="M534 168V269H566"/>
+
+  <rect class="card" x="571" y="82" width="274" height="100" rx="12"/>
+  <text x="708" y="113" text-anchor="middle" font-size="17" font-weight="bold">Geometric pipeline</text>
+  <text x="708" y="141" text-anchor="middle" class="muted" font-size="14">MSE · RMSE · Chamfer · Hausdorff</text>
+  <text x="708" y="163" text-anchor="middle" class="muted" font-size="14">Shared-view renders · deviation heatmap</text>
+
+  <rect class="card" x="571" y="219" width="274" height="100" rx="12"/>
+  <text x="708" y="250" text-anchor="middle" font-size="17" font-weight="bold">Perceptual pipeline</text>
+  <text x="708" y="278" text-anchor="middle" class="muted" font-size="14">Multiple camera views</text>
+  <text x="708" y="300" text-anchor="middle" class="muted" font-size="14">LPIPS · PSNR · SSIM</text>
+
+  <path class="arrow" d="M846 132H894V168H924"/>
+  <path class="arrow" d="M846 269H894V194H924"/>
+  <rect class="accent" x="930" y="120" width="166" height="100" rx="12"/>
+  <text x="1013" y="153" text-anchor="middle" font-size="17" font-weight="bold">Outputs</text>
+  <text x="1013" y="182" text-anchor="middle" class="muted" font-size="14">CSV · PLY · PNG</text>
+  <text x="560" y="366" text-anchor="middle" class="muted" font-size="14">Each pipeline writes into the selected output folder; run them in separate folders to keep overlapping files.</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 310" role="img"><style>
+:root{--bg:#f7f9fb;--ink:#27384c;--sub:#344b60;--mute:#536a82;--box:#ffffff;--hl:#dfe9f4;--line:#7089a5;--arrow:#56708c;--gt:#356487;--rm:#c87856;--gtfill:#aac2d7;--node:#537a9a;--guide:#9ab0c1;--link:#69727d}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--ink:#e6edf3;--sub:#c3d0dc;--mute:#9fb1c3;--box:#161b22;--hl:#1f3550;--line:#5f7f9f;--arrow:#8aa4bd;--gt:#6fb0dc;--rm:#e59a78;--gtfill:#2a4259;--node:#6fa3c9;--guide:#4a6178;--link:#8b96a3}}
+.bg{fill:var(--bg)}.t{font-family:Arial,sans-serif}.ink{fill:var(--ink)}.sub{fill:var(--sub)}.mute{fill:var(--mute)}
+.box{fill:var(--box);stroke:var(--line);stroke-width:2}.hl{fill:var(--hl);stroke:var(--line);stroke-width:2}
+.arr{stroke:var(--arrow);stroke-width:2;fill:none}.arrf{fill:var(--arrow)}
+.gts{stroke:var(--gt);fill:none}.rms{stroke:var(--rm);fill:none}.gtf{fill:var(--gt)}.rmf{fill:var(--rm)}
+</style><rect class="bg" width="100%" height="100%"/><g class="t"><text class="ink" x="24" y="33" font-size="23" font-weight="bold">ICP de similaridade: rotação + translação + escala uniforme</text>
+<path class="gts" stroke-width="5" d="M86 240L134 92L236 212L86 240"/><path class="rms" stroke-width="5" d="M265 215L299 126L350 235L265 215"/>
+<path class="arr" stroke-width="3" d="M390 155H480" marker-end="url(#a)"/>
+<path class="gts" stroke-width="5" d="M570 240L618 92L720 212L570 240"/><path class="rms" stroke-width="4" stroke-dasharray="8 5" d="M579 234L625 100L715 208L579 234"/>
+<text class="sub" x="110" y="286" font-size="17">Antes: poses diferentes</text><text class="sub" x="568" y="286" font-size="17">Depois: sobreposição aproximada</text><text class="sub" x="390" y="138" font-size="15">ICP</text></g><defs><marker id="a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path class="arrf" d="M0 0L7 3.5L0 7"/></marker></defs></svg>

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meshcomparison"
+version = "0.1.0"
+description = "Geometric and perceptual evaluation of a reconstructed mesh against a ground-truth mesh"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "trimesh",
+    "pyrender",
+    "open3d",
+    "matplotlib",
+    "imageio",
+]
+
+[project.optional-dependencies]
+perceptual = ["scikit-image", "torch", "torchvision", "lpips"]
+gui = ["PySide6", "pyvista", "pyvistaqt"]
+dev = ["pytest", "ruff"]
+
+[project.gui-scripts]
+mesh-gui = "meshcomparison.gui.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"meshcomparison.gui" = ["icon.ico", "icon.png"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F"]

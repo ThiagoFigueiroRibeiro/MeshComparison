@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1050" viewBox="0 0 1100 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Fluxo desejável de desenvolvimento assistido por agentes</title>
+  <desc id="desc">Da solicitação à integração autorizada, com contexto, implementação, validação, CI e revisão humana. Falhas retornam à implementação.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M1 1 9 5 1 9z" fill="var(--connector)"/>
+    </marker>
+    <marker id="failure-arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M1 1 9 5 1 9z" fill="var(--failure)"/>
+    </marker>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --heading: #18324b;
+        --muted: #526a80;
+        --card: #ffffff;
+        --card-stroke: #d5e1ec;
+        --primary: #eaf3ff;
+        --primary-stroke: #a8c6e8;
+        --success: #e9f7ef;
+        --success-stroke: #8dc8a4;
+        --connector: #7392ad;
+        --failure: #b87552;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --heading: #e5f0fb;
+          --muted: #b3c4d5;
+          --card: #1e2d3d;
+          --card-stroke: #40566b;
+          --primary: #203b56;
+          --primary-stroke: #527ba2;
+          --success: #1e3a32;
+          --success-stroke: #4b8b6a;
+          --connector: #91afca;
+          --failure: #e0a17d;
+        }
+      }
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+      .heading { fill: var(--heading); font-size: 30px; font-weight: 750; }
+      .subtitle { fill: var(--muted); font-size: 16px; }
+      .title { fill: var(--heading); font-size: 21px; font-weight: 700; }
+      .details { fill: var(--muted); font-size: 15px; }
+      .connector { fill: none; marker-end: url(#arrow); stroke: var(--connector); stroke-linecap: round; stroke-width: 3; }
+      .card { fill: var(--card); stroke: var(--card-stroke); }
+      .primary { fill: var(--primary); stroke: var(--primary-stroke); }
+      .accept { fill: var(--success); stroke: var(--success-stroke); }
+      .step { stroke-width: 1.5; }
+    </style>
+  </defs>
+  <text x="550" y="55" text-anchor="middle" class="heading">Fluxo desejável · Agent Harness</text>
+  <text x="550" y="87" text-anchor="middle" class="subtitle">Um processo supervisionado, com validação e revisão humana</text>
+
+  <g text-anchor="middle">
+    <rect x="185" y="117" width="730" height="100" rx="16" class="card step"/>
+    <text x="550" y="156" class="title">1 · Solicitação de implementação</text>
+    <text x="550" y="187" class="details">Issue ou especificação com critérios de aceitação</text>
+    <path d="M550 219v22" class="connector"/>
+
+    <rect x="185" y="251" width="730" height="100" rx="16" class="primary step"/>
+    <text x="550" y="290" class="title">2 · Agente de desenvolvimento</text>
+    <text x="550" y="321" class="details">Codex, Claude Code ou equivalente · permissões limitadas</text>
+    <path d="M550 353v22" class="connector"/>
+
+    <rect x="185" y="385" width="730" height="100" rx="16" class="card step"/>
+    <text x="550" y="424" class="title">3 · Contexto do repositório</text>
+    <text x="550" y="455" class="details">AGENTS.md, documentação, decisões e testes</text>
+    <path d="M550 487v22" class="connector"/>
+
+    <rect x="185" y="519" width="730" height="100" rx="16" class="primary step"/>
+    <text x="550" y="558" class="title">4 · Implementação e validação local</text>
+    <text x="550" y="589" class="details">Branch de trabalho · Ruff · pytest · regressões</text>
+    <path d="M550 621v22" class="connector"/>
+
+    <rect x="185" y="653" width="730" height="100" rx="16" class="card step"/>
+    <text x="550" y="692" class="title">5 · GitHub Actions</text>
+    <text x="550" y="723" class="details">Verificações automáticas no pull request</text>
+    <path d="M550 755v22" class="connector"/>
+
+    <rect x="185" y="787" width="730" height="100" rx="16" class="card step"/>
+    <text x="550" y="826" class="title">6 · Revisão humana</text>
+    <text x="550" y="857" class="details">Verificação das evidências e aprovação</text>
+    <path d="M550 889v22" class="connector"/>
+
+    <rect x="185" y="921" width="730" height="95" rx="16" class="accept step"/>
+    <text x="550" y="959" class="title">7 · Integração autorizada</text>
+    <text x="550" y="990" class="details">Merge na branch protegida com rastreabilidade</text>
+  </g>
+
+  <path d="M185 703H105V569H185" fill="none" stroke="var(--failure)" stroke-dasharray="7 7" stroke-linecap="round" stroke-width="2.5" marker-end="url(#failure-arrow)"/>
+  <text x="91" y="638" text-anchor="middle" transform="rotate(-90 91 638)" style="fill:var(--failure);font-size:14px;font-weight:600">Falha: corrigir e revalidar</text>
+</svg>

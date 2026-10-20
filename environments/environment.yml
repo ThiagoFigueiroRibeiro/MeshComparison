@@ -1,0 +1,24 @@
+name: meshEval
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - numpy
+      - pandas
+      - trimesh
+      - pyrender
+      - open3d
+      - matplotlib
+      - imageio
+      - scipy
+      - scikit-image
+      - torch
+      - torchvision
+      - lpips
+      - PySide6
+      - pyvista
+      - pyvistaqt
+      - pytest
+      - ruff
